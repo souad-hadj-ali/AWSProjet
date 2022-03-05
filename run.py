@@ -1,7 +1,7 @@
 from flask import (Flask, request, render_template)
 import requests
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='/Image')
 
 
 @app.route("/")
@@ -9,10 +9,10 @@ def hello():
     return "Running"
 
 
-@app.route("/content")
+@app.route("/index")
 def content():
     # Todo 1
-    response = requests.get(url="http://3.72.85.29:3000/content")
+    response = requests.get(url="http://3.72.85.29:3000/index")
     return render_template("index.html", response=response.text)
 
 
