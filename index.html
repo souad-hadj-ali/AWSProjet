@@ -5,6 +5,19 @@
     <title>Projet AWS</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+    function myFunction() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+             document.getElementById("demo").innerHTML =
+             this.responseText;
+            }
+    };
+  xhttp.open("GET", "http://TodoIpv4:3000/rdsdb", true);
+  xhttp.send();
+}
+</script>
 </head>
 <body>
     <nav>
